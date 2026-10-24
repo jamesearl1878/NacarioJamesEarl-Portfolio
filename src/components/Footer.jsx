@@ -2,6 +2,33 @@ import { navItems, site } from '../data/site'
 import Crest from './Crest'
 import { ArrowUp, GitHubIcon, MailIcon } from './Icons'
 
+function FooterContact({ item, icon: Icon }) {
+  if (item.isPlaceholder) {
+    return (
+      <span className="footer-link footer-placeholder">
+        <Icon />
+        {item.value}
+        <span className="footer-tag">placeholder</span>
+      </span>
+    )
+  }
+
+  const href = item.url ?? `mailto:${item.value}`
+  const isExternal = /^https?:/i.test(href)
+
+  return (
+    <a
+      className="footer-link"
+      href={href}
+      target={isExternal ? '_blank' : undefined}
+      rel={isExternal ? 'noreferrer me' : undefined}
+    >
+      <Icon />
+      {item.value}
+    </a>
+  )
+}
+
 export default function Footer() {
   const { email, github } = site.contact
 
@@ -39,18 +66,10 @@ export default function Footer() {
             <p className="footer-heading">Elsewhere</p>
             <ul className="footer-list">
               <li>
-                <span className="footer-link footer-placeholder">
-                  <MailIcon />
-                  {email.value}
-                  <span className="footer-tag">placeholder</span>
-                </span>
+                <FooterContact item={email} icon={MailIcon} />
               </li>
               <li>
-                <span className="footer-link footer-placeholder">
-                  <GitHubIcon />
-                  {github.value}
-                  <span className="footer-tag">placeholder</span>
-                </span>
+                <FooterContact item={github} icon={GitHubIcon} />
               </li>
             </ul>
           </div>

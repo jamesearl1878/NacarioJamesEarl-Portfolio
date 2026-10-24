@@ -2,9 +2,9 @@
 
 A single-page student developer portfolio built with React, Vite, and Tailwind CSS. The design uses a warm editorial palette, an original crest, and an orange-red accent inspired by motorsport graphics without copying any team identity.
 
-**Status:** local build complete; not deployed yet.
+**Status:** local build complete with real contact details; not deployed yet.
 
-> **Before publishing:** replace the contact placeholders in `src/data/site.js` and the deployment URL placeholders in `index.html`, then run `npm run check:content`. The check is expected to fail until those real details are added.
+> **Before publishing:** replace the deployment URL placeholders in `index.html`, then run `npm run check:content`. The check is expected to fail until the live site URL is added.
 
 ## What is included
 
@@ -51,29 +51,7 @@ The production output is written to `dist/`.
 
 ## Before publishing
 
-### 1. Replace the contact placeholders
-
-Edit `src/data/site.js`. Do not guess an address or profile URL. Use details that belong to James Earl Nacario and that should be public.
-
-```js
-contact: {
-  email: {
-    label: 'Email',
-    value: 'the-real-address@example.com',
-    isPlaceholder: false,
-  },
-  github: {
-    label: 'GitHub',
-    value: 'github.com/the-real-username',
-    url: 'https://github.com/the-real-username',
-    isPlaceholder: false,
-  },
-},
-```
-
-While `isPlaceholder` is `true`, the site shows non-clickable text and a visible placeholder tag. This prevents a guessed contact link from being published.
-
-### 2. Replace the deployment URL
+### 1. Replace the deployment URL
 
 In `index.html`, replace every `REPLACE-ME.vercel.app` value with the final site URL:
 
@@ -84,7 +62,7 @@ In `index.html`, replace every `REPLACE-ME.vercel.app` value with the final site
 
 Keep the Open Graph image at `1200 × 630`. The current cover is `public/og-image.png`; regenerate it if the name, role, or branding changes.
 
-### 3. Run the content check
+### 2. Run the content check
 
 ```bash
 npm run check:content
@@ -92,12 +70,12 @@ npm run check:content
 
 This must pass before submission. It fails on:
 
-- remaining contact or URL placeholders
+- remaining deployment URL placeholders
 - invented experience, project, client, or award claims
 - `href="#"` links and placeholder copy
 - missing required assets, including the project images and OG image
 
-### 4. Add the live project link after deployment
+### 3. Add the live project link after deployment
 
 Once the Vercel URL is known, add it to the Portfolio v2 entry in `src/data/projects.js`:
 

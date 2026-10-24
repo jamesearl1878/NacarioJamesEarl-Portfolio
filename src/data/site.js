@@ -50,14 +50,14 @@ export const site = {
   contact: {
     email: {
       label: 'Email',
-      value: 'your.email@example.com',
-      isPlaceholder: true,
+      value: 'jamesearlnacario.cti@gmail.com',
+      isPlaceholder: false,
     },
     github: {
       label: 'GitHub',
-      value: 'github.com/your-username',
-      url: null,
-      isPlaceholder: true,
+      value: 'github.com/jamesearl1878',
+      url: 'https://github.com/jamesearl1878',
+      isPlaceholder: false,
     },
   },
   aiNote:
