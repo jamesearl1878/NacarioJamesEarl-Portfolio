@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Promise Demo</title>
+</head>
+<body>
+  <h2>Promise Demo</h2>
+  
+  <button id="manualPromiseBtn">Run Manual Promise</button>
+  <button id="fetchPromiseBtn">Run Fetch Promise</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    const output = document.getElementById("output");
+
+    // Utility function to log messages
+    function log(message) {
+      output.textContent += message + "\n";
+    }
+
+    // Manual Promise Example
+    document.getElementById("manualPromiseBtn").addEventListener("click", () => {
+      output.textContent = ""; // clear previous logs
+
+      let myPromise = new Promise((resolve, reject) => {
+        let success = Math.random() > 0.5; // randomly succeed or fail
+
+        setTimeout(() => {
+          if (success) {
+            resolve("✅ Operation successful!");
+          } else {
+            reject("❌ Something went wrong!");
+          }
+        }, 1000);
+      });
+
+      myPromise
+        .then(message => log("Success: " + message))
+        .catch(error => log("Error: " + error));
+    });
+
+    // Fetch Promise Example
+    document.getElementById("fetchPromiseBtn").addEventListener("click", () => {
+      output.textContent = ""; // clear previous logs
+
+      fetch("https://jsonplaceholder.typicode.com/posts/1")
+        .then(response => response.json())
+        .then(data => {
+          log("✅ Fetch Success:");
+          log(JSON.stringify(data, null, 2));
+        })
+        .catch(error => {
+          log("❌ Fetch Error: " + error);
+        });
+    });
+  </script>
+</body>
+</html>
+
+
