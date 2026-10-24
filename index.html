@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="James Earl Nacario is a student developer learning front-end development and interface design. A portfolio of honest practice projects built with HTML, CSS, JavaScript, React, and Tailwind CSS." />
+    <meta name="author" content="James Earl Nacario" />
+    <meta name="theme-color" content="#F6F1E7" />
+    <link rel="canonical" href="https://REPLACE-ME.vercel.app/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="James Earl Nacario" />
+    <meta property="og:title" content="James Earl Nacario — Student Developer" />
+    <meta property="og:description" content="A student developer learning front-end development and interface design through honest, documented practice projects." />
+    <meta property="og:url" content="https://REPLACE-ME.vercel.app/" />
+    <meta property="og:image" content="https://REPLACE-ME.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Warm editorial cover with the name James Earl Nacario, student developer, the JN crest, and a framed portrait." />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="James Earl Nacario — Student Developer" />
+    <meta name="twitter:description" content="A student developer learning front-end development and interface design through honest, documented practice projects." />
+    <meta name="twitter:image" content="https://REPLACE-ME.vercel.app/og-image.png" />
+
+    <title>James Earl Nacario — Student Developer</title>
+    <style>
+      html { background: #f6f1e7; }
+      html.dark { background: #09090a; }
+    </style>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('jn-theme')
+          var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
+          document.documentElement.classList.toggle('dark', dark)
+          document.documentElement.style.colorScheme = dark ? 'dark' : 'light'
+          document.documentElement.classList.add('js')
+        } catch (error) {
+          document.documentElement.classList.add('js')
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>This portfolio uses JavaScript to display its content. Please enable JavaScript to view the site.</noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
