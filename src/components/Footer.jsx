@@ -8,7 +8,7 @@ function FooterContact({ item, icon: Icon }) {
       <span className="footer-link footer-placeholder">
         <Icon />
         {item.value}
-        <span className="footer-tag">placeholder</span>
+       
       </span>
     )
   }
